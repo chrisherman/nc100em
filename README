@@ -1,4 +1,4 @@
-nc100em 1.2 - a family of Amstrad NC100/NC200 emulators:
+nc100em 1.21 - a family of Amstrad NC100/NC200 emulators:
 
   gnc100em - (for X) a GTK+-based version (the best, IMHO :-))
   snc100em - an svgalib version
@@ -43,6 +43,14 @@ the README in the romdump directory), but it's up to you to correctly
 observe copyright law. I'm no lawyer.
 
 `romdump' won't yet dump the NC200's ROM, I'm afraid. :-(
+
+
+Changes in 1.21
+---------------
+The serial output of serout_flush in common.c writes now to STDOUT_FILENO, allowing redirection of the output.
+Redirect stdin and stdout from/to the emulator to a serial port: 
+    cat /dev/ttyUSB0 | ./dnc100em -m -s > /dev/ttyUSB0
+
 
 
 Roadmap
