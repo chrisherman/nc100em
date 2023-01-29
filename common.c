@@ -403,7 +403,7 @@ void serout_flush(void)
 if(!allow_serial) return;
 
 if(seroutpos>0)
-  write(tty_fd,seroutbuf,seroutpos);
+  write(STDOUT_FILENO,seroutbuf,seroutpos);
 seroutpos=0;
 }
 
